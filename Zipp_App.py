@@ -25,7 +25,7 @@ while True:
     event, values = window.read()
     print(event, values)
     try:
-        filepaths = values["files"].split(",")
+        filepaths = values["files"].split(";")
         folder = values["folder"]
         make_archive(filepaths, folder)
         window["output"].update(value="Compression completed!", text_color='green')

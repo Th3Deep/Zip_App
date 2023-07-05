@@ -14,9 +14,12 @@ folder_button = sg.FolderBrowse("Folder", key='Folder')
 extract_button = sg.Button("Extract", key='Extract')
 output_label = sg.Text(key="output", text_color='green')
 
-layout = [[label1, input1, archive_button],
-          [label2, input2, folder_button],
-          [extract_button, output_label]]
+col1 = sg.Column([[label1], [label2]])
+col2 = sg.Column([[input1], [input2]])
+col3 = sg.Column([[archive_button], [folder_button]])
+
+
+layout = [[col1, col2, col3], [extract_button, output_label]]
 
 window = sg.Window("Archive Extractor", layout=layout)
 
